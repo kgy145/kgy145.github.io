@@ -1,5 +1,6 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
+import { useData } from 'vitepress'
 import BackgroundLayer from '../components/BackgroundLayer.vue'
 import { onMounted } from 'vue'
 import Live2DWidget from "../components/Live2DWidget.vue";
@@ -7,15 +8,10 @@ import ScrollArrow from "../components/ScrollArrow.vue";
 import Giscus from "@giscus/vue";
 
 const { Layout } = DefaultTheme
+const { page } = useData()
 
 onMounted(() => {
-  const splash = document.getElementById('splash-screen');
-  if (splash) {
-    splash.style.opacity = '0'
-    setTimeout(() => {
-      splash.remove()
-    }, 600)
-  }
+
 })
 </script>
 
@@ -30,6 +26,7 @@ onMounted(() => {
     </template>
     <template #doc-footer-before>
       <Giscus
+          :key="page.relativePath"
           id="comments"
           repo="kgy145/kgy145.github.io"
           repo-id="R_kgDOTq9f3w"

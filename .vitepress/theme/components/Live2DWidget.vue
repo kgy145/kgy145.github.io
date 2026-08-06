@@ -24,4 +24,12 @@
 #waifu-toggle {
   bottom: 95px !important;
 }
+
+@media (max-width: 768px) {
+  #waifu { display: none; }
+}
+
+@media (max-width: 768px) {
+  #waifu-toggle { display: none; }
+}
 </style>

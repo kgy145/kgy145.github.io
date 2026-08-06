@@ -12,7 +12,7 @@ export default defineConfig({
       { text: '全部随笔', link: '/articles' },
       { text: '致谢', link: '/acknowledge' },
       { text: '组件测试', link: '/widget-test' },
-      { text: '下载站', link: 'https://pan.kgy145.top/' }
+      { text: '下载站（待建）', link: 'https://pan.kgy145.top/' }
     ],
 
     sidebar: undefined,
