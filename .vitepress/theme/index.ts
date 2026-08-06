@@ -1,17 +1,18 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import './style.css'
+import './styles/style.css'
+import MyLayout from "./layouts/MyLayout.vue";
+import GHRepo from "./components/GHRepo.vue";
+import GHReadme from "./components/GHReadme.vue";
+import BlogList from "./components/BlogList.vue";
 
 export default {
   extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-    })
-  },
-  enhanceApp({ app, router, siteData }) {
-    // ...
+  Layout: MyLayout,
+  enhanceApp({ app }) {
+    app.component('GHRepo', GHRepo)
+    app.component('GHReadme', GHReadme)
+    app.component('BlogList', BlogList)
   }
 } satisfies Theme

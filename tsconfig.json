@@ -21,6 +21,11 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src-old"
-  ]
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.d.ts",
+    ".vitepress/**/*.vue",
+    "**/*.ts",
+    "**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", ".vitepress/dist", ".vitepress/cache"]
 }

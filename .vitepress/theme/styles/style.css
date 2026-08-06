@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import 'lxgw-wenkai-lite-webfont/style.css';
+
 /**
  * Customize default theme styling by overriding CSS variables:
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
@@ -49,10 +52,10 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  --vp-c-brand-1: #C93A6E;
+  --vp-c-brand-2: #E05587;
+  --vp-c-brand-3: #F56FA1;
+  --vp-c-brand-soft: rgba(245, 111, 161, 0.14);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
@@ -68,6 +71,13 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+
+.dark {
+  --vp-c-brand-1: #F58DB3;
+  --vp-c-brand-2: #F56FA1;
+  --vp-c-brand-3: #D64474;
+  --vp-c-brand-soft: rgba(245, 111, 161, 0.16);
 }
 
 /**
@@ -137,3 +147,49 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+
+/**--------------------------------------------------------------------------
+ * ------------------------- CUSTOM STYLES ----------------------------------
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-nav-bg-color: rgba(255, 255, 255, 0.95);
+}
+
+.dark {
+  --vp-nav-bg-color: rgba(0, 0, 0, 0.95);
+}
+
+/*.VPNav {*/
+/*  width: 100%;*/
+/*}*/
+
+.VPNavBarTitle.VPNavBarTitle > a {
+  font-size: 18px;
+}
+
+.VPHomeHero .name {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  padding-bottom: 8px;
+}
+
+.aside-curtain {
+  display: none;
+}
+
+/* ==== Fonts ==== */
+
+:root {
+  --vp-font-family-base: 'LXGW WenKai Lite', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --vp-font-family-mono: 'LXGW WenKai Mono Lite', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+}
+
+/* ==== PATCH: 修复badges所属image不是inline元素的bug ==== */
+.VPContent img {
+  display: inline;
+}
+
+.VPContent {
+  pointer-events: none;
+}
