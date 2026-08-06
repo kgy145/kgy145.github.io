@@ -152,26 +152,32 @@
  * ------------------------- CUSTOM STYLES ----------------------------------
  * -------------------------------------------------------------------------- */
 
-:root {
-  --vp-nav-bg-color: rgba(255, 255, 255, 0.95);
-}
-
-.dark {
-  --vp-nav-bg-color: rgba(0, 0, 0, 0.95);
-}
-
-/*.VPNav {*/
-/*  width: 100%;*/
-/*}*/
-
 .VPNavBarTitle.VPNavBarTitle > a {
   font-size: 18px;
 }
 
-.VPHomeHero .name {
+.VPHero {
+  height: calc(110vh - var(--vp-nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.VPHero .name {
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
-  padding-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+.VPHero .name {
+  font-size: clamp(3rem, 8vw, 4.5rem) !important;
+}
+.VPHero .text {
+  font-size: clamp(1.4rem, 4vw, 2.4rem) !important;
+}
+.VPHero .tagline {
+  font-size: clamp(1.2rem, 3vw, 1.8rem) !important;
 }
 
 .aside-curtain {
@@ -188,4 +194,18 @@
 /* ==== PATCH: 修复badges所属image不是inline元素的bug ==== */
 .VPContent img {
   display: inline;
+}
+
+/* ==== PATCH: 为页脚添加毛玻璃效果 ==== */
+.VPFooter {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark .VPFooter {
+  background: rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.1);
 }

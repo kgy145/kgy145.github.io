@@ -6,4 +6,6 @@ prev: false
 next: false
 ---
 
-<BlogList limit=100 />
+# 全部随笔列表
+---
+<BlogList :limit=100 :card="false" />

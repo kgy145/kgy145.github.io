@@ -38,7 +38,6 @@ const props = defineProps({
     type: Object,
     default: () => ({}),
   },
-  // 新增 card 属性，控制是否显示卡片背景和边框
   card: {
     type: Boolean,
     default: true,
@@ -48,12 +47,10 @@ const props = defineProps({
 // 默认 badge → 背景色/文字色 映射
 const defaultBadgeMap = {
   '硬件DIY': { bg: '#e67e22', color: '#fff' },
-  '前端': { bg: '#3498db', color: '#fff' },
-  '后端': { bg: '#2ecc71', color: '#fff' },
-  '网络安全': { bg: '#e74c3c', color: '#fff' },
-  '算法与数据结构': { bg: '#9b59b6', color: '#fff' },
-  '生活': { bg: '#f39c12', color: '#fff' },
-  'ACGN': { bg: '#e382a2', color: '#fff' }
+  '软件相关': { bg: '#3498db', color: '#fff' },
+  '生活': { bg: '#99f312', color: '#fff' },
+  'ACGN': { bg: '#e382a2', color: '#fff' },
+  '游戏': { bg: '#12f3e0', color: '#fff' }
 }
 
 const badgeMap = computed(() => ({
@@ -143,10 +140,9 @@ function badgeStyle(badge) {
   text-transform: capitalize;
 }
 
-/* 卡片样式（当 card 为 true 时追加） */
 .blog-list-card {
   margin: 2rem auto;
-  padding: 2.5rem 2rem 1.5rem;
+  padding: 1rem 1.5rem;
   background-color: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
@@ -154,7 +150,6 @@ function badgeStyle(badge) {
   transition: box-shadow 0.2s ease;
 }
 
-/* 可选的 hover 效果（非必须） */
 .blog-list-card:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }

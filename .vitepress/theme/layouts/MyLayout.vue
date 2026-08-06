@@ -1,6 +1,6 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme'
-import { useData } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 import BackgroundLayer from '../components/BackgroundLayer.vue'
 import { onMounted } from 'vue'
 import Live2DWidget from "../components/Live2DWidget.vue";
@@ -9,6 +9,7 @@ import Giscus from "@giscus/vue";
 
 const { Layout } = DefaultTheme
 const { page } = useData()
+const route = useRoute()
 
 onMounted(() => {
 
@@ -24,7 +25,7 @@ onMounted(() => {
     <template #home-hero-after>
       <ScrollArrow />
     </template>
-    <template #doc-footer-before>
+    <template #doc-footer-before v-if="route.path.startsWith('/blogs/')">
       <Giscus
           :key="page.relativePath"
           id="comments"
