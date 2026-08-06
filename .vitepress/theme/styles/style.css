@@ -189,7 +189,3 @@
 .VPContent img {
   display: inline;
 }
-
-.VPContent {
-  pointer-events: none;
-}
