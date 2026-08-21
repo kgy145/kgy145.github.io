@@ -18,12 +18,13 @@ function stripMarkdown(md: any) {
     text = text.replace(/^\s*[-+*]\s+/gm, '')
     text = text.replace(/^\s*\d+\.\s+/gm, '')
     text = text.replace(/\n{2,}/g, '\n')
+    text = text.replace(/\{\{[^}]*}}/g, '')
     return text.trim()
 }
 
 export default {
     // 监听 blogs 目录下所有 .md 文件的变化
-    watch: ['blogs/*.md'],
+    watch: ['blogs/**/*.md'],
 
     load(watchedFiles: any[]) {
         // 获取 VitePress 配置中的源目录，用于构造 URL

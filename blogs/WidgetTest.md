@@ -17,10 +17,10 @@ badge: ["软件相关"]
 
 **输入：**
 ```vue
-<GHReadme owner="kgy145" repo="kgy145" customTitle="README.md" />
+<GHReadme owner="kgy145" repo="kgy145" custom-title="README.md" />
 ```
 **输出：**
-<GHReadme owner="kgy145" repo="kgy145" customTitle="README.md" />
+<GHReadme owner="kgy145" repo="kgy145" custom-title="README.md" />
 
 ## GHRepo.vue
 
@@ -36,13 +36,13 @@ badge: ["软件相关"]
 ```vue
 - <GHRepo owner="kgy145" repo="kgy145.github.io" />
 - <GHRepo owner="vuejs" repo="vitepress" customTitle="VitePress 📝💨" />
-- 点击右面链接获取字体：<GHRepo owner="lxgw" repo="LxgwWenkai" displayType="link" />
-- 看板娘的LICENSE是<GHRepo owner="stevenjoezhang" repo="live2d-widget" displayType="license" />
+- 点击右面链接获取字体：<GHRepo owner="lxgw" repo="LxgwWenkai" display-type="link" />
+- 看板娘的LICENSE是<GHRepo owner="stevenjoezhang" repo="live2d-widget" display-type="license" />
 ```
 - <GHRepo owner="kgy145" repo="kgy145.github.io" />
 - <GHRepo owner="vuejs" repo="vitepress" customTitle="VitePress 📝💨" />
-- 点击链接获取字体：<GHRepo owner="lxgw" repo="LxgwWenkai" displayType="link" />
-- 左下角看板娘的LICENSE是<GHRepo owner="stevenjoezhang" repo="live2d-widget" displayType="license" />
+- 点击链接获取字体：<GHRepo owner="lxgw" repo="LxgwWenkai" display-type="link" />
+- 左下角看板娘的LICENSE是<GHRepo owner="stevenjoezhang" repo="live2d-widget" display-type="license" />
 
 ## BlogList.vue
 
@@ -62,3 +62,52 @@ badge: ["软件相关"]
 
 **输出：**
 <BlogList :limit="3" :card="true" />
+
+## MusicCard.vue
+
+显示包含歌曲元数据，简介及网易云链接的卡片。
+
+### 参数列表
+
+- `title` **（必填）**：歌曲标题，类型 `String`
+- `transliteration` **（可选）**：译名或副标题，类型 `String`，默认 `''`
+- `singer` **（可选）**：演唱者，类型 `String`，默认 `''`
+- `lyricist` **（可选）**：作词者，类型 `String`，默认 `''`
+- `composer` **（可选）**：作曲者，类型 `String`，默认 `''`
+- `arranger` **（可选）**：编曲者，类型 `String`，默认 `''`
+- `description` **（可选）**：简介文本（纯文本），类型 `String`，默认 `''`。**若使用了默认插槽，则插槽内容完全覆盖此属性。**
+- `neteaseId` **（可选）**：网易云歌曲 ID（数字或字符串），提供后将显示播放器，默认 `null`
+
+**输入：**
+```vue
+<MusicCard 
+    title="アスノヨゾラ哨戒班"
+    transliteration="明日的夜空哨戒班"
+    singer="IA"
+    lyricist="Orangestar"
+    composer="Orangestar"
+    arranger="Orangestar"
+    netease-id="1946819289">
+  《明日的夜空哨戒班》（日语：アスノヨゾラ哨戒班）是Orangestar于2014年08月19日投稿的VOCALOID原创曲，是第一首由IA演唱的神话曲，同时也是第二首没有初音未来参与演唱的神话曲。
+  
+  _部分数据摘录自<a href="https://mzh.moegirl.org.cn/%E6%98%8E%E6%97%A5%E7%9A%84%E5%A4%9C%E7%A9%BA%E5%93%A8%E6%88%92%E7%8F%AD">萌娘百科</a>_
+  
+  _因为原唱是vip歌曲，所以这里放了烤版翻唱QWQ，想听原版点[这里](https://music.163.com/#/song?id=30870173)_
+</MusicCard>
+```
+
+**输出：**
+<MusicCard
+    title="アスノヨゾラ哨戒班"
+    transliteration="明日的夜空哨戒班"
+    singer="IA"
+    lyricist="Orangestar"
+    composer="Orangestar"
+    arranger="Orangestar"
+    netease-id="1946819289">
+《明日的夜空哨戒班》（日语：アスノヨゾラ哨戒班）是Orangestar于2014年08月19日投稿的VOCALOID原创曲，是第一首由IA演唱的神话曲，同时也是第二首没有初音未来参与演唱的神话曲。
+
+_部分数据摘录自<a href="https://mzh.moegirl.org.cn/%E6%98%8E%E6%97%A5%E7%9A%84%E5%A4%9C%E7%A9%BA%E5%93%A8%E6%88%92%E7%8F%AD">萌娘百科</a>_
+
+_因为原唱是vip歌曲，所以这里放了烤版翻唱QWQ，想听原版点[这里](https://music.163.com/#/song?id=30870173)_
+</MusicCard>

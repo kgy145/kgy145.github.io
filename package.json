@@ -1,7 +1,7 @@
 {
   "name": "kgy145.github.io",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -22,6 +22,8 @@
     "@types/node": "^26.1.2",
     "gray-matter": "^4.0.3",
     "lxgw-wenkai-lite-webfont": "^1.7.0",
-    "marked": "^18.0.9"
+    "marked": "^18.0.9",
+    "netease-mini-player-v3": "^3.0.1",
+    "netease-mini-player-v3-plus": "^3.0.1"
   }
 }

@@ -20,6 +20,12 @@ dependencies:
   marked:
     specifier: ^18.0.9
     version: 18.0.9
+  netease-mini-player-v3:
+    specifier: ^3.0.1
+    version: 3.0.1
+  netease-mini-player-v3-plus:
+    specifier: ^3.0.1
+    version: 3.0.1
 
 devDependencies:
   typescript:
@@ -1360,6 +1366,10 @@ packages:
       strip-bom-string: 1.0.0
     dev: false
 
+  /gsap@3.15.0:
+    resolution: {integrity: sha512-dMW4CWBTUK1AEEDeZc1g4xpPGIrSf9fJF960qbTZmN/QwZIWY5wgliS6JWl9/25fpTGJrMRtSjGtOmPnfjZB+A==}
+    dev: false
+
   /hast-util-to-html@9.0.5:
     resolution: {integrity: sha512-OguPdidb+fbHQSU4Q4ZiLKnzWo8Wwsf5bZfbvu7//a9oTYoqD/fWpe96NuHkoS9h0ccGOTe0C4NGXdtS0iObOw==}
     dependencies:
@@ -1625,6 +1635,17 @@ packages:
     resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  /netease-mini-player-v3-plus@3.0.1:
+    resolution: {integrity: sha512-400stg9Bnn+5X67gbd/p8dLaZQmOAyAQQ64hsQGwRzoB/cIKm4bY7LtortI5Mrws9JxIMhph8FMc7Cw+eTkm7Q==}
+    hasBin: true
+    dependencies:
+      gsap: 3.15.0
+    dev: false
+
+  /netease-mini-player-v3@3.0.1:
+    resolution: {integrity: sha512-WouVO65hY5GKy0ff6Rxjb8qfF+1FezArK6sORPJX0URDVNEiod1s62iXplEFOTNWyrsHU0OdP6tNpf3c9ZMQ+g==}
+    dev: false
 
   /oniguruma-to-es@3.1.1:
     resolution: {integrity: sha512-bUH8SDvPkH3ho3dvwJwfonjlQ4R80vjyvrU8YpxuROddv55vAEJrTuCuCVUhhsHbtlD9tGGbaNApGQckXhS8iQ==}

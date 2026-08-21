@@ -49,7 +49,7 @@ const defaultBadgeMap = {
   '硬件DIY': { bg: '#e67e22', color: '#fff' },
   '软件相关': { bg: '#3498db', color: '#fff' },
   '生活': { bg: '#99f312', color: '#fff' },
-  'ACGN': { bg: '#e382a2', color: '#fff' },
+  'ACG': { bg: '#e382a2', color: '#fff' },
   '游戏': { bg: '#12f3e0', color: '#fff' }
 }
 
