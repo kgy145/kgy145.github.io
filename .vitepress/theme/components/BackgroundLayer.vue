@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted, ref} from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 const API_URL = 'https://uapis.cn/api/v1/random/image?category=acg'
 const DEFAULT_URL = '/images/home-bg-1.webp'
@@ -56,13 +56,76 @@ onMounted(() => {
   img.onerror = () => {
     imageOpacity.value = 1
   }
+
+  initParticles()
 })
 
-const isSaving = ref(false)
+let particlesInitialized = false
 
-const saveBg = async () => {
+const initParticles = async () => {
+  if (particlesInitialized) return
+  try {
+    const { tsParticles } = await import('@tsparticles/engine')
+    const { loadSlim } = await import('@tsparticles/slim')
 
+    await loadSlim(tsParticles)
+    await tsParticles.load({
+      id: 'tsparticles',
+      options: {
+        background: {
+          color: 'transparent',
+        },
+        fpsLimit: 60,
+        particles: {
+          move: {
+            enable: true,
+            speed: 0.4,
+            direction: 'bottom',
+            random: true,
+            straight: false,
+            outModes: 'destroy',
+          },
+          number: {
+            density: {
+              enable: true,
+              width: 800,
+              height: 800,
+            },
+            value: 60,
+          },
+          opacity: {
+            value: { min: 0.1, max: 0.6 },
+          },
+          size: {
+            value: { min: 2, max: 4 },
+          },
+          paint: {
+            fill: {
+              color: {
+                value: "#575757",
+              },
+              enable: true,
+            }
+          }
+        },
+        detectRetina: true,
+      }
+    })
+    particlesInitialized = true
+  } catch (error) {
+    console.log('粒子加载失败：', error)
+  }
 }
+
+onUnmounted(async () => {
+  if (particlesInitialized) {
+    try {
+      const { tsParticles } = await import('@tsparticles/engine')
+      await tsParticles.destroy('tsparticles')
+      particlesInitialized = false
+    } catch (_) { /* ignore */ }
+  }
+})
 </script>
 
 <template>
@@ -76,6 +139,7 @@ const saveBg = async () => {
         @error="onImageError"
         alt="背景图片"
     />
+    <div id="tsparticles" class="particles-container"></div>
   </div>
   <div class="footer-text">
     <span v-if="bgUrl === DEFAULT_URL">默认背景图来源 Pixiv: 48853577，</span><a
@@ -121,6 +185,16 @@ const saveBg = async () => {
 
 .dark .bg-layer-blur {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .footer-text {
