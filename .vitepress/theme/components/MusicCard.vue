@@ -24,8 +24,11 @@
       <nmp-player
           :song-id="neteaseId"
           theme="auto"
+          skin="kgy145-default"
+          skin-url="/plugins/nmp-player/skin/default/skin.json"
           layout="compact"
           remember="false"
+          auto-pause-on-hidden="false"
       ></nmp-player>
       <div class="player-tip">
         <a :href="`https://music.163.com/song?id=${neteaseId}`" target="_blank">
@@ -37,7 +40,6 @@
 </template>
 
 <script setup>
-import "netease-mini-player-v3/auto";
 defineProps({
   title: { type: String, required: true },
   transliteration: { type: String, default: '' },

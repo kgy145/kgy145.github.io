@@ -209,3 +209,19 @@
   background: rgba(0, 0, 0, 0.25);
   border-color: rgba(255, 255, 255, 0.1);
 }
+
+.nmpv3-player {
+  --nmpv3-accent: var(--vp-c-brand-2) !important;
+  --nmpv3-accent-3: var(--vp-c-red-2) !important;
+
+  /*--nmpv3-surface: var(--vp-c-bg, #fafafa) !important;*/
+
+  /*--nmpv3-text: var(--vp-c-text-1, #2f333a) !important;*/
+
+  /*--nmpv3-border: var(--vp-c-border, rgba(24, 27, 32, 0.08)) !important;*/
+
+  --nmpv3-flow-1: var(--vp-c-brand-soft, rgba(245, 111, 161, 0.14)) !important;
+  --nmpv3-flow-2: var(--vp-c-red-soft, rgba(245, 111, 161, 0.14)) !important;
+  --nmpv3-flow-3: var(--vp-c-brand-soft, rgba(245, 111, 161, 0.14)) !important;
+  --nmpv3-flow-4: var(--vp-c-red-soft, rgba(245, 111, 161, 0.14)) !important;
+}

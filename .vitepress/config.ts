@@ -48,5 +48,13 @@ export default defineConfig({
     }
   },
 
-  lastUpdated: true
+  lastUpdated: true,
+
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: tag => tag === 'nmp-player'
+      }
+    }
+  }
 })

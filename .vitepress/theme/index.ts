@@ -8,6 +8,9 @@ import GHReadme from "./components/GHReadme.vue";
 import BlogList from "./components/BlogList.vue";
 import MusicCard from "./components/MusicCard.vue";
 
+import 'netease-mini-player-v3/auto';
+import 'netease-mini-player-v3-plus';
+
 export default {
   extends: DefaultTheme,
   Layout: MyLayout,
