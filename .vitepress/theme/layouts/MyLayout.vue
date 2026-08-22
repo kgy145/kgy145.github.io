@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import { useData, useRoute } from 'vitepress'
 import BackgroundLayer from '../components/BackgroundLayer.vue'
@@ -8,8 +9,10 @@ import ScrollArrow from "../components/ScrollArrow.vue";
 import Giscus from "@giscus/vue";
 
 const { Layout } = DefaultTheme
-const { page } = useData()
+const { page, isDark } = useData()
 const route = useRoute()
+
+const giscusTheme = computed(() => isDark.value ? 'dark' : 'light')
 
 onMounted(() => {
 
@@ -38,7 +41,7 @@ onMounted(() => {
           reactions-enabled="1"
           emit-metadata="0"
           input-position="top"
-          theme="preferred_color_scheme"
+          :theme="giscusTheme"
           lang="zh-CN"
           loading="lazy"
           crossorigin="anonymous"

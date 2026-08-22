@@ -23,9 +23,7 @@
     <div v-if="neteaseId" class="music-player">
       <nmp-player
           :song-id="neteaseId"
-          theme="auto"
-          skin="kgy145-default"
-          skin-url="/plugins/nmp-player/skin/default/skin.json"
+          :theme="playerTheme"
           layout="compact"
           remember="false"
           auto-pause-on-hidden="false"
@@ -40,6 +38,9 @@
 </template>
 
 <script setup>
+import { useData } from "vitepress";
+import { computed } from "vue";
+
 defineProps({
   title: { type: String, required: true },
   transliteration: { type: String, default: '' },
@@ -50,6 +51,9 @@ defineProps({
   description: { type: String, default: '' },
   neteaseId: { type: [String, Number], default: null },
 })
+
+const { isDark } = useData()
+const playerTheme = computed(() => isDark.value ? "dark" : "light")
 </script>
 
 <style scoped>
