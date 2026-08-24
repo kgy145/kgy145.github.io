@@ -28,7 +28,7 @@ onMounted(() => {
     <template #home-hero-after>
       <ScrollArrow />
     </template>
-    <template #doc-footer-before v-if="route.path.startsWith('/blogs/')">
+    <template #doc-footer-before v-if="route.path.startsWith('/blogs/') || route.path === '/message-board'">
       <Giscus
           :key="page.relativePath"
           id="comments"

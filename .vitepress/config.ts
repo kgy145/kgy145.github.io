@@ -10,6 +10,7 @@ export default defineConfig({
     nav: [
       { text: '博客主页', link: '/' },
       { text: '全部随笔', link: '/articles' },
+      { text: '留言板', link: '/message-board'},
       { text: '致谢', link: '/acknowledge' },
       { text: '组件测试', link: '/blogs/WidgetTest' },
       { text: '下载站（待建）', link: 'https://pan.kgy145.top/' }
@@ -23,7 +24,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: '',
+      message: 'E-mail: kgy145@126.com',
       copyright: 'Copyright © 2026 Kaguya145',
     },
 
@@ -98,5 +99,7 @@ export default defineConfig({
         isCustomElement: tag => tag === 'nmp-player'
       }
     }
-  }
+  },
+
+  cleanUrls: true,
 })
