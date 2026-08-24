@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- 完全本地化了默认主题的文本占位符
+
 ## 1.2.3 (2026-08-22)
 
 ### Added
