@@ -2,6 +2,7 @@
 layout: doc
 title: 自定义组件测试
 badge: ["软件相关"]
+lastUpdated: 2026-08-21
 ---
 
 # 自定义组件测试
