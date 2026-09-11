@@ -188,7 +188,7 @@
 
 :root {
   --vp-font-family-base: 'LXGW WenKai Lite', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
-  --vp-font-family-mono: 'LXGW WenKai Mono Lite', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --vp-font-family-mono: 'Courier New', 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 /* ==== PATCH: 修复badges所属image不是inline元素的bug ==== */

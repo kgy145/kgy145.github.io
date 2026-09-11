@@ -112,3 +112,23 @@ _部分数据摘录自<a href="https://mzh.moegirl.org.cn/%E6%98%8E%E6%97%A5%E7%
 
 _因为原唱是vip歌曲，所以这里放了烤版翻唱QWQ，想听原版点[这里](https://music.163.com/#/song?id=30870173)_
 </MusicCard>
+
+## Spoiler.vue
+
+用于遮挡内容，鼠标悬停时显示，移开恢复，点击切换并锁定。
+
+### 参数列表
+- `color` **（可选）**：遮挡层的颜色，类型 `String`，默认 `'var(--vp-c-bg-alt)'`
+- `tooltip` **（可选）**：悬停提示文本，类型 `String`，默认 `'你知道的太多了'`
+
+**输入：**
+```vue
+<Spoiler tooltip="点击查看秘密">
+  这里是被遮挡的信息，鼠标悬停或点击可以揭示。
+</Spoiler>
+```
+
+**输出：**
+<Spoiler tooltip="点击查看秘密">
+这里是被遮挡的信息，鼠标悬停或点击可以揭示。
+</Spoiler>

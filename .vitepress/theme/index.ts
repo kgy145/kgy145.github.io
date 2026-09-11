@@ -10,6 +10,7 @@ import MusicCard from "./components/MusicCard.vue";
 
 import 'netease-mini-player-v3/auto';
 import 'netease-mini-player-v3-plus';
+import Spoiler from "./components/Spoiler.vue";
 
 export default {
   extends: DefaultTheme,
@@ -19,5 +20,6 @@ export default {
     app.component('GHReadme', GHReadme)
     app.component('BlogList', BlogList)
     app.component('MusicCard', MusicCard)
+    app.component('Spoiler', Spoiler)
   }
 } satisfies Theme
