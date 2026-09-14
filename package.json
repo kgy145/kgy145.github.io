@@ -1,7 +1,7 @@
 {
   "name": "kgy145.github.io",
   "private": true,
-  "version": "1.2.5",
+  "version": "1.2.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,6 +12,8 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
+    "@types/markdown-it-footnote": "^3.0.4",
+    "markdown-it-footnote": "^4.0.0",
     "typescript": "~6.0.2",
     "vite": "^8.2.0",
     "vitepress": "1.6.4",

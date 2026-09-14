@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.6 (2026-09-14)
+
+### Added
+
+- 添加了脚注插件`markdown-it-footnote`
+
 ## 1.2.5 (2026-08-25)
 
 ### Added
