@@ -12,6 +12,7 @@ import 'netease-mini-player-v3/auto';
 import 'netease-mini-player-v3-plus';
 import Spoiler from "./components/Spoiler.vue";
 import BilibiliVideoPlayer from "./components/BilibiliVideoPlayer.vue";
+import { TegakiRenderer } from "tegaki/vue";
 
 export default {
   extends: DefaultTheme,
@@ -23,5 +24,6 @@ export default {
     app.component('MusicCard', MusicCard)
     app.component('Spoiler', Spoiler)
     app.component('BilibiliVideoPlayer', BilibiliVideoPlayer)
+    app.component('TegakiRenderer', TegakiRenderer)
   }
 } satisfies Theme

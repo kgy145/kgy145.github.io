@@ -28,6 +28,7 @@
     "lxgw-wenkai-lite-webfont": "^1.7.0",
     "marked": "^18.0.9",
     "netease-mini-player-v3": "^3.0.1",
-    "netease-mini-player-v3-plus": "^3.0.1"
+    "netease-mini-player-v3-plus": "^3.0.1",
+    "tegaki": "^1.1.0"
   }
 }

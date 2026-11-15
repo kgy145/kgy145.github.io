@@ -1,10 +1,36 @@
 ---
 layout: home
-
-hero:
-  name: "Kaguya145's Blog"
-  tagline: 必须要写些什么吗...
 ---
+
+<div class="custom-hero">
+  <svg width="0" height="0" style="position: absolute; pointer-events: none;">
+    <defs>
+      <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="30%" stop-color="#bd34fe" />
+        <stop offset="100%" stop-color="#41d1ff" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <h1 class="name">
+    <TegakiRenderer 
+      :font="bundle" 
+      text="Kaguya145's Blog" 
+      :time="{ mode: 'uncontrolled', speed: 3 }"
+      :plugins="plugins" 
+      :style="{ fontSize: 'clamp(3rem, 8vw, 4.5rem)', width: '100%' }"
+    ></TegakiRenderer>
+  </h1>
+
+  <div class="text-wrapper">
+    <TegakiRenderer 
+      :font="chi_bundle" 
+      text="必须要写些什么吗..." 
+      :time="{ mode: 'uncontrolled', speed: 10, delay: 1.5 }"
+      :style="{ fontSize: 'clamp(1.4rem, 4vw, 2.4rem)', width: '100%', color: 'var(--vp-c-text-2)' }"
+    ></TegakiRenderer>
+  </div>
+</div>
 
 <ScrollArrow />
 
@@ -18,6 +44,38 @@ hero:
 </div>
 
 <style>
+.VPHero {
+  display: none !important;
+}
+
+.custom-hero {
+  height: calc(110vh - var(--vp-nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.custom-hero .name svg path {
+  fill: url(#hero-grad) !important;
+}
+
+.custom-hero {
+  margin: 0;
+  font-weight: 700;
+  width: 100%;
+  transform: translateY(-10vh); 
+}
+
+.custom-hero {
+  width: 100%;
+  /* 这里的 margin-top 可以进一步微调间距 */
+  margin-top: 2rem; 
+  transform: translateY(-5vh); /* 跟随主标题稍微上移一点 */
+}
+
 .home-content {
   display: flex;
   flex-direction: row;
@@ -52,9 +110,6 @@ hero:
 
 .right-panel .gh-readme {
   margin: 0;
-}
-
-.right-panel .gh-readme {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -69,7 +124,16 @@ hero:
 </style>
 
 <script setup>
+import bundle from '.vitepress/theme/assets/dancing-script/bundle.ts'; 
+import chi_bundle from 'tegaki/fonts/lxgw-wenkai';
+import { globalGradientPlugin } from 'tegaki/vue';
 import { onMounted } from 'vue';
+
+const myGradient = globalGradientPlugin({
+  colors: ['#bd34fe', '#41d1ff']
+});
+
+const plugins = [myGradient];
 
 onMounted(() => {
   const el = document.querySelector('.home-content');

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import footnote from 'markdown-it-footnote'
+import {fileURLToPath} from "node:url";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -102,6 +103,20 @@ export default defineConfig({
       compilerOptions: {
         isCustomElement: tag => tag === 'nmp-player'
       }
+    }
+  },
+
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: '@',
+          replacement: fileURLToPath(new URL('./', import.meta.url))
+        }
+      ]
+    },
+    optimizeDeps: {
+      exclude: ['tegaki']
     }
   },
 
