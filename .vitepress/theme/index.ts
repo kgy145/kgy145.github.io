@@ -11,6 +11,7 @@ import MusicCard from "./components/MusicCard.vue";
 import 'netease-mini-player-v3/auto';
 import 'netease-mini-player-v3-plus';
 import Spoiler from "./components/Spoiler.vue";
+import BilibiliVideoPlayer from "./components/BilibiliVideoPlayer.vue";
 
 export default {
   extends: DefaultTheme,
@@ -21,5 +22,6 @@ export default {
     app.component('BlogList', BlogList)
     app.component('MusicCard', MusicCard)
     app.component('Spoiler', Spoiler)
+    app.component('BilibiliVideoPlayer', BilibiliVideoPlayer)
   }
 } satisfies Theme
