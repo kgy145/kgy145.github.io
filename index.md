@@ -49,31 +49,40 @@ layout: home
 }
 
 .custom-hero {
-  height: calc(110vh - var(--vp-nav-height));
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  gap: 2rem;
   width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  /* 抵消 VitePress 给内容区预留的导航高度，让标题组在首屏真正垂直居中 */
+  margin: calc(var(--vp-nav-height) * -1) 0 0;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* canvas 是绝对定位的，1.8 倍字号正好是它的高度；不撑开 h1 就会和副标题重叠 */
+.custom-hero .name,
+.custom-hero .text-wrapper {
+  display: block;
+  width: 100%;
+  margin: 0;
+  line-height: 1.8;
 }
 
 .custom-hero .name svg path {
   fill: url(#hero-grad) !important;
 }
 
-.custom-hero {
-  margin: 0;
-  font-weight: 700;
-  width: 100%;
-  transform: translateY(-10vh); 
-}
-
-.custom-hero {
-  width: 100%;
-  /* 这里的 margin-top 可以进一步微调间距 */
-  margin-top: 2rem; 
-  transform: translateY(-5vh); /* 跟随主标题稍微上移一点 */
+@media (max-width: 768px) {
+  .custom-hero {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
 }
 
 .home-content {
